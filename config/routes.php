@@ -81,6 +81,12 @@ return function (RouteBuilder $routes): void {
         $builder->fallbacks();
     });
 
+    $routes->scope('/', function (RouteBuilder $routes) {
+        $routes->setExtensions(['json']);
+        $routes->resources('Smartphones');
+        $routes->connect('/smartphones/add', ['controller' => 'Smartphones', 'action' => 'add', '_method' => 'POST']);
+    });
+
     /*
      * If you need a different set of middleware or none at all,
      * open new scope and define routes there.
