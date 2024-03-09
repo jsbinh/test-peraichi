@@ -35,4 +35,6 @@ composer create-project --prefer-dist cakephp/app:~4.0
 
 2. 2-b. Write the implementation that satisfies the test cases.
 
--
+## Problem 3: MVC
+
+Use `/smartphones/add` route.
