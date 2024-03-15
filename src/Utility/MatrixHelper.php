@@ -14,6 +14,7 @@ class MatrixHelper
      */
     public function rotateMatrix(array $matrix): array
     {
+        /* Old code.
         $n = count($matrix);
 
         // Check square matrix
@@ -25,6 +26,20 @@ class MatrixHelper
         for ($i = 0; $i < $n; $i++) {
             for ($j = 0; $j < $n; $j++) {
                 $rotated[$j][$n - 1 - $i] = $matrix[$i][$j];
+            }
+        }
+
+        return $rotated;
+         */
+
+        // New code.
+        $rows = count($matrix);
+        $cols = count($matrix[0]);
+
+        $rotated = [];
+        for ($i = 0; $i < $cols; $i++) {
+            for ($j = $rows - 1; $j >= 0; $j--) {
+                $rotated[$i][$rows - $j - 1] = $matrix[$j][$i];
             }
         }
 
